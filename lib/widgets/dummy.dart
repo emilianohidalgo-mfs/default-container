@@ -5,11 +5,12 @@ class Dummy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-        child: SizedBox(
+    return Center(
+        child: Container(
       width: 200.0,
       height: 500.0,
-      child: Card(child: Text('Hello World!')),
+          color: Colors.red,
+      child: const Card(child: Text('Hello World!')),
     ));
   }
 }

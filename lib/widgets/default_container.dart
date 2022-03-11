@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class DefaultContainer extends StatelessWidget {
-  const DefaultContainer({Key? key, required this.content}) : super(key: key);
+  const DefaultContainer(
+      {Key? key, required this.content, this.showLogo = false})
+      : super(key: key);
 
+  final bool showLogo;
   final Widget content;
   final String ellipsesPath = 'assets/banner-background-ellipses.svg';
   final String tigoLogoPath = 'assets/tigo-logo.svg';
@@ -13,6 +16,9 @@ class DefaultContainer extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        title: showLogo
+            ? Center(child: SvgPicture.asset(tigoLogoPath))
+            : const Text(''),
         elevation: 0,
         backgroundColor: Colors.transparent,
         actions: <Widget>[
@@ -27,6 +33,7 @@ class DefaultContainer extends StatelessWidget {
                 MaterialPageRoute(
                     builder: (context) => DefaultContainer(
                           content: content,
+                          showLogo: true,
                         )),
               );
             },

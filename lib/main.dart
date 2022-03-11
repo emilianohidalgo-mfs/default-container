@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Millicom Demo',
       theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
           primarySwatch: Palette.millicomPalette,
           appBarTheme:
               const AppBarTheme(iconTheme: IconThemeData(color: Colors.black))),
